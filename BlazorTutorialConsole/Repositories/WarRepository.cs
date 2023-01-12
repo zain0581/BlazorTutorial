@@ -17,11 +17,12 @@ namespace BlazorTutorialConsole.Repositories
             SqlConnection con = new SqlConnection(Helper.ConnectionString);
             try
             {
-                string sql = "INSERT INTO [dbo].[Horse]([ID],[Name],[Age])VALUES(" + obj.ID + ",'" + obj.Name + "',)";
+                con.Open();
+                string sql = "INSERT INTO [dbo].[War]([ID],[Name],)VALUES(" + obj.ID + ",'" + obj.Name + "',)";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 result = cmd.ExecuteNonQuery();
                 cmd = null;
-                con.Open();
+               
 
             }
             catch (Exception)
@@ -45,7 +46,7 @@ namespace BlazorTutorialConsole.Repositories
             SqlConnection con = new SqlConnection(Helper.ConnectionString);
             try
             {
-                string sql = "DELETE FROM [dbo].[Horse] WHERE id=" + id;
+                string sql = "DELETE FROM [dbo].[War] WHERE id=" + id;
                 con.Open();
                 SqlCommand cmd = new SqlCommand(sql, con);
                 result = cmd.ExecuteNonQuery();
@@ -74,7 +75,7 @@ namespace BlazorTutorialConsole.Repositories
                 SqlConnection con = new SqlConnection(Helper.ConnectionString);
                 try
                 {
-                    string sql = "SELECT  [ID],[Name],[Age]FROM [dbo].[Horse] where id=" + id;
+                    string sql = "SELECT  [ID],[Name],[Age]FROM [dbo].[War] where id=" + id;
                     con.Open();
                     SqlCommand cmd = new SqlCommand(sql, con);
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -112,7 +113,7 @@ namespace BlazorTutorialConsole.Repositories
             SqlConnection con = new SqlConnection(Helper.ConnectionString);
             try
             {
-                string sql = "SELECT  [ID],[Name],[Age]FROM [dbo].[Horse]";
+                string sql = "SELECT  [ID],[Name],FROM [dbo].[War]";
                 con.Open();
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader dr = cmd.ExecuteReader();

@@ -1,5 +1,5 @@
-﻿@page "/Samurias"
-@inject ISamurai _samurai
+﻿@page "/Wars"
+@inject IWar _war
 
 <h3>Test</h3>
 <p>@myString</p>
@@ -14,20 +14,20 @@
         <tr>
             <td>ID</td>
             <td>Name</td>
-            <td>Age</td>
+            
         </tr>
     </thead>
     <tbody>
 
-        @foreach (var samurai in SamuraiList)
+        @foreach (var war in WarList)
         {
             <tr>
-                <td>@samurai.ID</td>
-                <td>@samurai.Name</td>
-                <td>@samurai.Age</td>
+                <td>@war.ID</td>
+                <td>@war.Name</td>
+                
                 <td>
-                   @* <a href="testUpdate/@samurai.ID">Update</a> |*@
-                    <button @onclick="()=>samuraiDelete(samurai)">Delete</button>
+                    @* <a href="testUpdate/@samurai.ID">Update</a> |*@
+                    <button @onclick="()=>WarDelete(war)">Delete</button>
                 </td>
             </tr>
 
@@ -42,17 +42,17 @@
     {
         "Alex", "Lasse","withmore"
     };
-    List<Samurai> SamuraiList = new List<Samurai>();
+    List<War> WarList = new List<War>();
     protected override void OnInitialized()
     { // this is the first method to be run
       // I want to load in data from repo. Place it in a variable
 
-        SamuraiList = _samurai.GetAll();
+       WarList = _war.GetAll();
     }
-    public void samuraiDelete(Samurai samurai)
+    public void WarDelete(War war)
     {
         // I want to delete the horse - how do I do it?
-        _samurai.Delete(samurai.ID);
+        _war.Delete(war.ID);
         // If I want to update my page, I have to Navigate to this url again
         StateHasChanged();
     }

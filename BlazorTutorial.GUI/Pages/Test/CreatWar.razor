@@ -6,7 +6,7 @@
 <EditForm Model="@_warr" OnValidSubmit="CreateWar">
     <h3>Creat War</h3>
     <div class="form-control">
-        Age <input type="text" @bind="_warr.ID" />
+        ID <input type="text" @bind="_warr.ID" />
     </div>
     <div class="form-control">
         Name <input type="text" @bind="_warr.Name" />
@@ -16,11 +16,18 @@
 
 
 </EditForm>
+<button @onclick="Back">back</button>
+<h3>TestCreate</h3>
 
 
 
 
 @code {
+    public void Back()
+    {
+        // navigate back to another page - NavManager....
+        NavManager.NavigateTo("/Samurias");
+    }
    
     War _warr = new War();
     // here we need a create method

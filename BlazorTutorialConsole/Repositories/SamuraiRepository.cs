@@ -46,7 +46,7 @@ namespace BlazorTutorialConsole.Repositories
             SqlConnection con = new SqlConnection(Helper.ConnectionString);
             try
             {
-                string sql = "DELETE FROM [dbo].[Horse] WHERE id=" + id;
+                string sql = "DELETE FROM [dbo].[Samurai] WHERE id=" + id;
                 con.Open();
                 SqlCommand cmd = new SqlCommand(sql, con);
                 result = cmd.ExecuteNonQuery();
@@ -75,7 +75,7 @@ namespace BlazorTutorialConsole.Repositories
             SqlConnection con = new SqlConnection(Helper.ConnectionString);
             try
             {
-                string sql = "SELECT  [ID],[Name],[Age]FROM [dbo].[Horse] where id=" + id;
+                string sql = "SELECT  [ID],[Name],[Age]FROM [dbo].[Samurai] where id=" + id;
                 con.Open();
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -113,7 +113,7 @@ namespace BlazorTutorialConsole.Repositories
             SqlConnection con = new SqlConnection(Helper.ConnectionString);
             try
             {
-                string sql = "SELECT  [ID],[Name],[Age]FROM [dbo].[Horse]";
+                string sql = "SELECT  [ID],[Name],[Age]FROM [dbo].[Samurai]";
                 con.Open();
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader dr = cmd.ExecuteReader();

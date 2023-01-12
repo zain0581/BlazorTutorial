@@ -17,7 +17,7 @@ namespace BlazorTutorialConsole.Repositories
             SqlConnection con = new SqlConnection(Helper.ConnectionString);
             try
             {
-                string sql = "INSERT INTO [dbo].[Horse]([ID],[Name],[Age])VALUES(" + obj.ID + ",'" + obj.Name + "',)";
+                string sql = "INSERT INTO [dbo].[Weapons]([ID],[Name],)VALUES(" + obj.ID + ",'" + obj.Name + "',)";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 result = cmd.ExecuteNonQuery();
                 cmd = null;
@@ -45,7 +45,7 @@ namespace BlazorTutorialConsole.Repositories
             SqlConnection con = new SqlConnection(Helper.ConnectionString);
             try
             {
-                string sql = "DELETE FROM [dbo].[Horse] WHERE id=" + id;
+                string sql = "DELETE FROM [dbo].[Weapons] WHERE id=" + id;
                 con.Open();
                 SqlCommand cmd = new SqlCommand(sql, con);
                 result = cmd.ExecuteNonQuery();
@@ -74,7 +74,7 @@ namespace BlazorTutorialConsole.Repositories
             SqlConnection con = new SqlConnection(Helper.ConnectionString);
             try
             {
-                string sql = "SELECT  [ID],[Name],[Age]FROM [dbo].[Horse] where id=" + id;
+                string sql = "SELECT  [ID],[Name] FROM [dbo].[Weapons] where id=" + id;
                 con.Open();
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -113,7 +113,7 @@ namespace BlazorTutorialConsole.Repositories
             SqlConnection con = new SqlConnection(Helper.ConnectionString);
             try
             {
-                string sql = "SELECT  [ID],[Name],[Age]FROM [dbo].[Horse]";
+                string sql = "SELECT  [ID],[Name], FROM [dbo].[Weapons]";
                 con.Open();
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader dr = cmd.ExecuteReader();
