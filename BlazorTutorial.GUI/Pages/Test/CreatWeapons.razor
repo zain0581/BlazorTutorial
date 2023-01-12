@@ -1,0 +1,34 @@
+﻿@page "/CreatWeapons"
+@inject IWeapons _weapons
+@inject NavigationManager NavManager
+
+
+<EditForm Model="@_weaponss" OnValidSubmit="CreateWeapons">
+    <h3>Creat Weapons</h3>
+    <div class="form-control">
+        Age <input type="text" @bind="_weaponss.ID" />
+    </div>
+    <div class="form-control">
+        Name <input type="text" @bind="_weaponss.Name" />
+    </div>
+  
+    <button type="submit">Creat Weapons</button>
+
+
+</EditForm>
+
+
+
+
+@code {
+
+
+
+    Weapons _weaponss = new Weapons();
+    // here we need a create method
+    public void CreateWeapons()
+    {
+        //console app here I come...!!
+        _weapons.Add(_weaponss);
+    }
+}
