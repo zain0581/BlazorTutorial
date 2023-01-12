@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorTutorialConsole\BlazorTutorialConsole.csproj" />
+    <Compile Remove="Pages\Quotes\**" />
+    <Content Remove="Pages\Quotes\**" />
+    <EmbeddedResource Remove="Pages\Quotes\**" />
+    <None Remove="Pages\Quotes\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Quotes\" />
+    <ProjectReference Include="..\BlazorTutorialConsole\BlazorTutorialConsole.csproj" />
   </ItemGroup>
 
 </Project>

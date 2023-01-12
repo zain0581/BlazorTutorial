@@ -17,11 +17,12 @@ namespace BlazorTutorialConsole.Repositories
             SqlConnection con = new SqlConnection(Helper.ConnectionString);
             try
             {
-                string sql = "INSERT INTO [dbo].[Horse]([ID],[Name],[Age])VALUES(" + obj.ID + ",'" + obj.Name + "'," + obj.Age + ")";
+                con.Open();
+                string sql = "INSERT INTO [dbo].[Samurai]([ID],[Name],[Age])VALUES(" + obj.ID + ",'" + obj.Name + "'," + obj.Age + ")";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 result = cmd.ExecuteNonQuery();
                 cmd = null;
-                con.Open();
+                
 
             }
             catch (Exception )

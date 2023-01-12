@@ -2,5 +2,23 @@
 <h3>Samurais</h3>
 
 @code {
+    //string myString = "I take a walk";
+    //List<string> sql = new List<string>()
+    //{
+    //    "Alex", "Lasse","withmore"
+    //};
+    List<Samurai> SamuraiList = new List<Samurai>();
+    protected override void OnInitialized()
+    { // this is the first method to be run
+      // I want to load in data from repo. Place it in a variable
 
+        SamuraiList = _samurai.GetAll();
+    }
+    public void horseDelete(Samurai samurai)
+    {
+        // I want to delete the horse - how do I do it?
+        _samurai.Delete(samurai.ID);
+        // If I want to update my page, I have to Navigate to this url again
+        StateHasChanged();
+    }
 }
