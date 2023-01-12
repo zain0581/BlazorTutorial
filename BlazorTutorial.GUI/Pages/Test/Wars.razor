@@ -1,14 +1,10 @@
 ﻿@page "/Wars"
 @inject IWar _war
 
-<h3>Test</h3>
-<p>@myString</p>
-<p>@sql[1]</p>
+<h3>warrr</h3>
 
-@foreach (var item in sql)
-{
-    <p>@item</p>
-}
+
+
 <table>
     <thead>
         <tr>
@@ -37,11 +33,8 @@
 </table>
 
 @code {
-    string myString = "I take a walk";
-    List<string> sql = new List<string>()
-    {
-        "Alex", "Lasse","withmore"
-    };
+   
+ 
     List<War> WarList = new List<War>();
     protected override void OnInitialized()
     { // this is the first method to be run

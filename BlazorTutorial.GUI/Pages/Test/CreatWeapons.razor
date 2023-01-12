@@ -3,7 +3,7 @@
 @inject NavigationManager NavManager
 
 
-<EditForm Model="@_weaponss" OnValidSubmit="CreateWeapons">
+@*<EditForm Model="@_weaponss" OnValidSubmit="CreateWeapons">
     <h3>Creat Weapons</h3>
     <div class="form-control">
         ID <input type="text" @bind="_weaponss.ID" />
@@ -16,7 +16,7 @@
 
 
 </EditForm>
-
+*@
 
 
 
@@ -26,9 +26,9 @@
 
     Weapons _weaponss = new Weapons();
     // here we need a create method
-    public void CreateWeapons()
-    {
-        //console app here I come...!!
-        _weapons.Add(_weaponss);
-    }
+//    public void CreateWeapons()
+//    {
+//        //console app here I come...!!
+//        _weapons.Add(_weaponss);
+//    }
 }

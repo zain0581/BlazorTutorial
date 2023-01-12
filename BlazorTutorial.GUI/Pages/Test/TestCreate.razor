@@ -1,22 +1,23 @@
 ﻿@page "/testCreate"
 @inject IHorse _horse
 @inject NavigationManager NavManager
+<h3>CreateHorse</h3>
 
 <EditForm Model="@horse" OnValidSubmit="CreateHorse">
     <div class="form-control">
-        ID <input type="text" @bind="horse.Id" />
+        id <input type="text" @bind="horse.Id" />
     </div>
     <div class="form-control">
         Name <input type="text" @bind="horse.Name" />
     </div>
     <div class="form-control">
-        Age <input type="text" @bind="horse.Age" />
+        age <input type="text" @bind="horse.Age" />
     </div>
     <button type="submit">Create Horsies</button>
     
 </EditForm>
-<button @onclick="Back">back</button>
-<h3>TestCreate</h3>
+<button @onclick="Back">BackTOList</button>
+
 
 @code {
     public void Back()
