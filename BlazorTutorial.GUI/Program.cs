@@ -1,5 +1,6 @@
 using BlazorTutorial.GUI.Data;
 using BlazorTutorialConsole.Interfaces;
+using BlazorTutorialConsole.Model;
 using BlazorTutorialConsole.Repositories;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
@@ -13,6 +14,8 @@ builder.Services.AddServerSideBlazor();
 // når du møder et interface så map det til et repo...
 builder.Services.AddScoped<IHorse, HorseRepository>();
 builder.Services.AddScoped<ISamurai, SamuraiRepository>();
+builder.Services.AddScoped<IWeapons, WeaponsRepository>();
+builder.Services.AddScoped<IWar, WarRepository>();
 
 
 //builder.Services.AddScoped<ISamurai, SamuraiRepository>();

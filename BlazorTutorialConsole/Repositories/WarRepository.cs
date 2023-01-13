@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BlazorTutorialConsole.Repositories
 {
-    internal class WarRepository : IWar
+    public class WarRepository : IWar
     {
         public int Add(War obj)
         {
@@ -18,7 +18,7 @@ namespace BlazorTutorialConsole.Repositories
             try
             {
                 con.Open();
-                string sql = "INSERT INTO [dbo].[War]([ID],[Name],)VALUES(" + obj.ID + ",'" + obj.Name + "',)";
+                string sql = "INSERT INTO [dbo].[War]([ID],[Name])VALUES(" + obj.ID + ",'" + obj.Name +"')";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 result = cmd.ExecuteNonQuery();
                 cmd = null;
@@ -75,7 +75,7 @@ namespace BlazorTutorialConsole.Repositories
                 SqlConnection con = new SqlConnection(Helper.ConnectionString);
                 try
                 {
-                    string sql = "SELECT  [ID],[Name],[Age]FROM [dbo].[War] where id=" + id;
+                    string sql = "SELECT  [ID],[Name] FROM [dbo].[War] where id=" + id;
                     con.Open();
                     SqlCommand cmd = new SqlCommand(sql, con);
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -113,7 +113,7 @@ namespace BlazorTutorialConsole.Repositories
             SqlConnection con = new SqlConnection(Helper.ConnectionString);
             try
             {
-                string sql = "SELECT  [ID],[Name],FROM [dbo].[War]";
+                string sql = "SELECT  [ID],[Name] FROM [dbo].[War]";
                 con.Open();
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader dr = cmd.ExecuteReader();

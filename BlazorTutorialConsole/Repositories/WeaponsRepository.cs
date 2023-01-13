@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BlazorTutorialConsole.Repositories
 {
-    internal class WeaponsRepository : IWeapons
+    public class WeaponsRepository : IWeapons
     {
         public int Add(Weapons obj)
         {
@@ -17,7 +17,7 @@ namespace BlazorTutorialConsole.Repositories
             SqlConnection con = new SqlConnection(Helper.ConnectionString);
             try
             {
-                string sql = "INSERT INTO [dbo].[Weapons]([ID],[Name],)VALUES(" + obj.ID + ",'" + obj.Name + "',)";
+                string sql = "INSERT INTO [dbo].[Weapons]([ID],[Name])VALUES(" + obj.ID + ",'" + obj.Name + "')";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 result = cmd.ExecuteNonQuery();
                 cmd = null;

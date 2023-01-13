@@ -10,6 +10,7 @@ namespace BlazorTutorialConsole.Interfaces
     public interface IWar
     {
         int Add(War obj);
+       
         int Update(War obj);
         int Delete(int id);
         War Get(int id);
